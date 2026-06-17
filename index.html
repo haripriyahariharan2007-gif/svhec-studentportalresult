@@ -78,9 +78,14 @@ Approved by AICTE & Affiliated to Anna University
 </div>
 
 <script>
-function login(){
- if(document.getElementById('reg').value==='732525IT014' &&
+async function getData() {
+  const res = await fetch("https://opensheet.elk.sh/1rAx8Zys1L2esZx401HGepxCSFyla6Zmy6uS8p9MhpMQ/Sheet1");
+  return await res.json();
+}
+function login()
+if(document.getElementById('reg').value==='732525IT014' &&
     document.getElementById('dob').value==='31-10-2007'){
+ 
       document.getElementById('result').style.display='block';
  } else {
       alert('Invalid Register Number or Password');
