@@ -53,7 +53,7 @@ Approved by AICTE & Affiliated to Anna University
 <input id="dob" placeholder="date of birth (31-10-2007)">
 <button onclick="login()">View Result</button>
 </div>
-if(reg === '732525IT014' && dob === '31-10-2007')
+
 <div class="result" id="result">
 <h2>PROVISIONAL RESULTS</h2>
 <p><b>Name:</b> HARIPRIYA P</p>
@@ -76,14 +76,18 @@ if(reg === '732525IT014' && dob === '31-10-2007')
 <tr><td>25TAT11</td><td>Heritage of Tamils</td><td>A+</td><td>PASS</td></tr>
 </table>
 </div>
-
 <script>
+function login(){
+  const reg = document.getElementById('reg').value;
+  const dob = document.getElementById('dob').value;
 
-function login()
-if(reg === '732525IT014' && dob === '31-10-2007')
-
-{document.getElementById('r esult').style.display='block'; } else { alert('Invalid Register Number or Password'); } 
+  if(reg === '732525IT014' && dob === '31-10-2007'){
+    document.getElementById('result').style.display = 'block';
+  } else {
+    alert('Invalid Register Number or DOB');
+  }
 }
 </script>
+
 </body>
 </html>
