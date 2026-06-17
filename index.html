@@ -79,6 +79,43 @@ Approved by AICTE & Affiliated to Anna University
 
 <script>
 
+async function getData() {
+  const res = await fetch("https://opensheet.elk.sh/1rAx8Zys1L2esZx401HGepxCSFyla6Zmy6uS8p9MhpMQ/Sheet1");
+  return await res.json();
+}
+
+async function login() {
+  const reg = document.getElementById('reg').value;
+  const dob = document.getElementById('dob').value;
+
+  const data = await getData();
+
+  const student = data.find(item =>
+    item.regno === reg && item.dob === dob
+  );
+
+  if (student) {
+
+    document.getElementById('result').innerHTML = `
+      <h2>PROVISIONAL RESULTS</h2>
+
+      <p><b>Name:</b> ${student.name}</p>
+      <p><b>Register Number:</b> ${student.regno}</p>
+      <p><b>DOB:</b> ${student.dob}</p>
+      <p><b>Course:</b> ${student.course}</p>
+
+      <h3>Result:</h3>
+      <p>Sem result data add pannalaam (next step)</p>
+    `;
+
+    document.getElementById('result').style.display = 'block';
+
+  } else {
+    alert('Invalid Register Number or DOB');
+  }
+}
+</script>
+
 function login()
 if(document.getElementById('reg').value==='732525IT014' &&
     document.getElementById('dob').value==='31-10-2007'){
