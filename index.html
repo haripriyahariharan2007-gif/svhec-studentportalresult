@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SVHEC Student Portal Result</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f5f5f5;margin:0}
+.header{background:green;color:white;padding:15px;text-align:center;font-weight:bold}
+.container,.result{max-width:900px;margin:20px auto;background:white;padding:20px;border-radius:10px}
+input{width:100%;padding:10px;margin:8px 0}
+button{padding:10px 15px;background:green;color:white;border:none;border-radius:6px}
+table{width:100%;border-collapse:collapse}
+th,td{border:1px solid #ccc;padding:8px}
+.result{display:none}
+</style>
+</head>
+<body>
+<div class="header">SHREE VENKATESHWARA HI-TECH ENGINEERING COLLEGE</div>
+
+<div class="container">
+<h2>Student Login</h2>
+<input id="reg" placeholder="Register Number">
+<input id="dob" placeholder="Date of Birth (31-10-2007)">
+<button onclick="login()">View Result</button>
+</div>
+
+<div class="result" id="result">
+<h2>PROVISIONAL RESULTS</h2>
+<p><b>Name:</b> HARIPRIYA P</p>
+<p><b>Register Number:</b> 732525IT014</p>
+<p><b>Date of Birth:</b> 31-10-2007</p>
+<p><b>Branch:</b> B.Tech - Information Technology</p>
+
+<table>
+<tr><th>Code</th><th>Subject</th><th>Grade</th><th>Result</th></tr>
+<tr><td>25CS111</td><td>Problem Solving Using C Programming</td><td>A</td><td>PASS</td></tr>
+<tr><td>25CY111</td><td>Engineering Chemistry</td><td>A+</td><td>PASS</td></tr>
+<tr><td>25EN111</td><td>Communicative English I</td><td>A+</td><td>PASS</td></tr>
+<tr><td>25MA111</td><td>Matrices and Calculus</td><td>S</td><td>PASS</td></tr>
+</table>
+</div>
+
+<script>
+function login(){
+ if(document.getElementById('reg').value==='732525IT014' &&
+    document.getElementById('dob').value==='31-10-2007'){
+      document.getElementById('result').style.display='block';
+ } else {
+      alert('Invalid Register Number or Password');
+ }
+}
+</script>
+</body>
+</html>
