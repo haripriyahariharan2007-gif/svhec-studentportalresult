@@ -78,11 +78,9 @@ Approved by AICTE & Affiliated to Anna University
 </div>
 <script>
 function login(){
-  const reg = document.getElementById('reg').value;
-  const dob = document.getElementById('dob').value;
+  if(document.getElementById('reg').value ==='732525IT014' &&
 
-  if(reg === '732525IT014' && dob === '31-10-2007'){
-    document.getElementById('result').style.display = 'block';
+ document.getElementById('dob').value ==='31-10-2007'){   document.getElementById('result').style.display = 'block';
   } else {
     alert('Invalid Register Number or DOB');
   }
